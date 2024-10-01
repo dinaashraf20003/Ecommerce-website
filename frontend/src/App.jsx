@@ -1,12 +1,15 @@
-import { useState } from 'react'
-import './App.css'
+import React from 'react';
+import Navbar from './components/Navbar';
+import Home from './pages/LandingPage';
+import LandingPage from './pages/LandingPage';
 
-function App() {
-  return (
-    <>
-    hello!
-    </>
-  )
-}
+const App = () => {
+    return (
+        <div>
+            <Navbar />
+            <LandingPage />
+        </div>
+    );
+};
 
-export default App
+export default App;
