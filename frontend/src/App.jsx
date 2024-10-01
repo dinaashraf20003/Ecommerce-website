@@ -1,13 +1,13 @@
 import React from 'react';
 import Navbar from './components/Navbar';
-import Home from './pages/LandingPage';
 import LandingPage from './pages/LandingPage';
+import ProductList from './pages/ProductList';
 
 const App = () => {
     return (
         <div>
             <Navbar />
-            <LandingPage />
+            <ProductList />
         </div>
     );
 };

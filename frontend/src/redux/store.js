@@ -1,16 +1,11 @@
-import { createStore } from 'redux';
+// src/store.js
+import { configureStore } from '@reduxjs/toolkit';
+import productReducer from './slices/productSlice';
 
-const initialState = {
-    products: [],
-};
-
-const reducer = (state = initialState, action) => {
-    switch (action.type) {
-        default:
-            return state;
-    }
-};
-
-const store = createStore(reducer);
+const store = configureStore({
+    reducer: {
+        products: productReducer,
+    },
+});
 
 export default store;
