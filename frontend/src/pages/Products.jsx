@@ -1,34 +1,24 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom"; // Ensure you import navigate if using react-router
+import ProductCard from "../components/ProductCard"; // Import the reusable ProductCard component
 
 const Container = styled.div`
+  padding: 50px;
+
   h1 {
     text-align: center;
+    margin-bottom: 20px;
   }
 
-  h2 {
-    text-align: center;
-  }
-`;
-
-const Product = styled.div`
-  float: left;
-  width: 30%;
-  margin: 5px;
-  padding: 5px;
-  border: 1px solid; /* Corrected to use solid border */
-  cursor: pointer;
-
-  img {
-    max-width: 100%;
-    height: 200px;
+  .products-wrapper {
+    display: flex;
+    flex-wrap: wrap; // Allows wrapping to the next line
+    justify-content: space-between; // Space between cards
   }
 `;
 
 function Products() {
   const [data, setData] = useState([]);
-  const navigate = useNavigate(); // Initialize navigate
 
   useEffect(() => {
     fetch("https://dummyjson.com/products")
@@ -39,16 +29,12 @@ function Products() {
 
   return (
     <Container>
-      <h1>Home</h1>
-      <h2>Products</h2>
-      {data.map((prod) => (
-        <Product key={prod.id} onClick={() => navigate(`/products/${prod.id}/${prod.title}`)}>
-          <img src={prod.images && prod.images.length > 0 ? prod.images[0] : 'https://via.placeholder.com/150'} alt={prod.title} />
-          <h2>{prod.title}</h2>
-          <p>ID: {prod.id}</p>
-          <p>Price: {prod.price}$</p>
-        </Product>
-      ))}
+      <h1>Products</h1>
+      <div className="products-wrapper">
+        {data.map((prod) => (
+          <ProductCard key={prod.id} product={prod} /> // Passing product data to the card
+        ))}
+      </div>
     </Container>
   );
 }

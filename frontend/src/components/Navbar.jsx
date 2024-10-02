@@ -10,6 +10,7 @@ const Nav = styled.div`
   align-items: center;
   padding: 15px 30px;
   background: #FFFFFF;
+  position:fixed;
   box-shadow: 0px 5.333px 80px 0 rgba(0, 0, 0, 0.1);
   top: 0;
   left: 0;
@@ -32,7 +33,7 @@ const NavBarContent = styled.ul`
 
   li {
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: 24px;

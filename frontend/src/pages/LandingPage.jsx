@@ -1,8 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import PIC from "../assets/pic.png";
+import Products from './Products';
+import About from './About';
+import Contact from './Contact';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const ImageContainer = styled.div`
+padding-top:100px;
   position: relative; 
   display: inline-block; 
   width: 100%; 
@@ -54,9 +60,16 @@ const ImageButton = styled.button`
 
 const LandingPage = () => {
   return (
+    <div>
+      <Navbar/>
     <ImageContainer>
       <ImageButton>Shop Now</ImageButton>
     </ImageContainer>
+    <Products/> 
+    <About/>
+    <Contact/>
+    <Footer/>
+    </div>
   );
 }
 
