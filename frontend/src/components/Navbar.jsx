@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Logo from "../assets/logo.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Nav = styled.div`
   display: flex;
@@ -10,7 +11,7 @@ const Nav = styled.div`
   align-items: center;
   padding: 15px 30px;
   background: #FFFFFF;
-  position:fixed;
+  position: fixed;
   box-shadow: 0px 5.333px 80px 0 rgba(0, 0, 0, 0.1);
   top: 0;
   left: 0;
@@ -32,14 +33,14 @@ const NavBarContent = styled.ul`
   margin: 0;
 
   li {
-    text-decoration: none;
     font-size: 20px;
-    font-style: normal;
     font-weight: 700;
     line-height: 24px;
     cursor: pointer;
     position: relative;
     padding-bottom: 5px;
+    text-decoration: none; /* Remove underline from li */
+    color: black; /* Default text color */
 
     &::after {
       content: '';
@@ -69,14 +70,14 @@ const Navbar = () => {
     <Nav>
       <img src={Logo} alt="Logo" />
       <NavBarContent>
-        <li>Home</li>
-        <li>Products</li>
-        <li>About</li>
-        <li>Contact</li>
+        <li onClick={() => window.location.href="#home"}>Home</li>
+        <li onClick={() => window.location.href="#products"}>Products</li>
+        <li onClick={() => window.location.href="#about"}>About</li>
+        <li onClick={() => window.location.href="#contact"}>Contact</li>
       </NavBarContent>
       <NavBarContent>
-        <li><FontAwesomeIcon icon={faUser} /> </li>
-        <li><FontAwesomeIcon icon={faShoppingCart} /></li>      
+        <Link to={"/login"}><li><FontAwesomeIcon icon={faUser} /></li></Link>
+        <Link to={"/"}><li><FontAwesomeIcon icon={faShoppingCart} /></li></Link>  
       </NavBarContent>
     </Nav>
   );

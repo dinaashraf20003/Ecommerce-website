@@ -76,6 +76,7 @@ const Contact = () => {
   };
 
   return (
+    <div id='contact'>
     <ContactContainer>
       <h1>Get in Touch</h1>
       <p>
@@ -112,6 +113,7 @@ const Contact = () => {
         <button type="submit">Send Message</button>
       </form>
     </ContactContainer>
+    </div>
   );
 };
 

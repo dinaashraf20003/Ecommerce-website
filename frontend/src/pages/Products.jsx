@@ -3,7 +3,7 @@ import styled from "styled-components";
 import ProductCard from "../components/ProductCard"; // Import the reusable ProductCard component
 
 const Container = styled.div`
-  padding: 50px;
+  padding: 70px;
 
   h1 {
     text-align: center;
@@ -28,6 +28,7 @@ function Products() {
   }, []);
 
   return (
+    <div id='products'>
     <Container>
       <h1>Products</h1>
       <div className="products-wrapper">
@@ -36,6 +37,7 @@ function Products() {
         ))}
       </div>
     </Container>
+    </div>
   );
 }
 

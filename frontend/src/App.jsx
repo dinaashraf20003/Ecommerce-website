@@ -13,7 +13,6 @@ const App = () => {
     return (
         <Router>
             <div>
-                <Navbar />
                 <Routes> {/* Wrap all routes in the Routes component */}
                     <Route path="/" element={<LandingPage />} />
                     <Route path="/products" element={<Products />} />

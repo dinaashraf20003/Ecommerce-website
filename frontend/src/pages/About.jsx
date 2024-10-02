@@ -2,10 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const AboutContainer = styled.div`
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px;
+  padding: 70px;
   background-color: #f9f9f9;
   text-align: center;
 
@@ -32,6 +33,7 @@ const AboutContainer = styled.div`
 
 const About = () => {
   return (
+    <div id="about">
     <AboutContainer>
       <h1>Welcome to OAK</h1>
       <p>
@@ -47,6 +49,7 @@ const About = () => {
         Join us on this journey as we celebrate uniqueness, elegance, and the art of living beautifully.
       </p>
     </AboutContainer>
+    </div>
   );
 };
 

@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import BCK from "../assets/bck.png";
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 const Container = styled.div`
+padding-top:100px;
  position: relative; 
   display: inline-block; 
   width: 100%; 
@@ -21,7 +25,7 @@ const Container = styled.div`
 
 const LogInForm = styled.form`
   background-color: #EAC8AF; /* OAK light color */
-  padding: 50px;
+  padding: 60px;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   width: 100%;
@@ -92,6 +96,15 @@ const LogInFormSignup = styled.div`
     }
   }
 `;
+const HomeLink = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Adjust as needed for spacing */
+  text-decoration: none; /* Remove underline */
+  color:white;
+`;
+
 
 const LogIn = () => {
   const [formData, setFormData] = useState({
@@ -143,6 +156,7 @@ const LogIn = () => {
               <a href="./Register" className="highlighted">Sign Up</a>
             </p>
           </LogInFormSignup>
+          <HomeLink to={"/"}><FontAwesomeIcon icon={faHome} /></HomeLink>
       </LogInForm>
     </Container>
   );

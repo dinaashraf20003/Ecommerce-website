@@ -60,7 +60,7 @@ const ImageButton = styled.button`
 
 const LandingPage = () => {
   return (
-    <div>
+    <div id='home'>
       <Navbar/>
     <ImageContainer>
       <ImageButton>Shop Now</ImageButton>

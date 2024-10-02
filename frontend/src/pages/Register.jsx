@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import BCK from "../assets/bck.png";
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 const Container = styled.div`
+  padding-top:100px;
   position: relative; 
   display: inline-block; 
   width: 100%; 
@@ -93,6 +97,16 @@ const LogInFormSignup = styled.div`
   }
 `;
 
+const HomeLink = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Adjust as needed for spacing */
+  text-decoration: none; /* Remove underline */
+  color:white;
+`;
+
+
 const Register = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -167,6 +181,7 @@ const Register = () => {
             <a href="./Login" className="highlighted">Log In</a> {/* Changed to point to login page */}
           </p>
         </LogInFormSignup>
+        <HomeLink to={"/"}><FontAwesomeIcon icon={faHome} /></HomeLink>
       </RegisterForm>
     </Container>
   );
